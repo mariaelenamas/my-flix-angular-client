@@ -22,4 +22,9 @@ export class WelcomePageComponent implements OnInit {
       width: '280px'
     });
   }
+  openMoviesDialog(): void {
+    this.dialog.open(UserLoginFormComponent, {
+      width: '280px'
+    });
+  }
 }
