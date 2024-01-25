@@ -25,6 +25,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { routes } from './app.routes';
 import { UserProfileComponent } from './user-profile/user-profile.component'
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
+import { MovieInfoComponent } from './movie-info/movie-info.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component'
     UserRegistrationFormComponent,
     WelcomePageComponent,
     UserProfileComponent,
+    UserLoginFormComponent,
+    MovieInfoComponent
   ],
   imports: [
     BrowserModule,
