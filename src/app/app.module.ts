@@ -20,7 +20,11 @@ import { AppComponent } from './app.component';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
-import { routes } from './app.routes'
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { routes } from './app.routes';
+import { UserProfileComponent } from './user-profile/user-profile.component'
 
 @NgModule({
   declarations: [
@@ -28,21 +32,24 @@ import { routes } from './app.routes'
     MovieCardComponent,
     UserRegistrationFormComponent,
     WelcomePageComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
-    CommonModule,
     HttpClientModule,
-    FormsModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule,
+    MatListModule,
     MatFormFieldModule,
+    MatDialogModule,
     MatSnackBarModule,
-    AppRoutingModule,
+    MatIconModule,
+    FormsModule,
+    MatToolbarModule,
+    MatTooltipModule,
     RouterModule.forRoot(routes),
   ],
   exports: [RouterModule],
