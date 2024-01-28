@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+/**
+ * Componenet for the main module
+ */
 export class AppComponent {
   title = 'my-flix-angular-client';
 }
