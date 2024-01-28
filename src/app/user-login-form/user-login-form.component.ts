@@ -13,6 +13,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './user-login-form.component.html',
   styleUrls: ['./user-login-form.component.scss']
 })
+/**
+ * That's the login component
+ */
 export class UserLoginFormComponent {
   @Input() loginData = { Username: '', Password: '' };
 
