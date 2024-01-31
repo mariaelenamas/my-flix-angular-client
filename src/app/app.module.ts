@@ -27,6 +27,7 @@ import { routes } from './app.routes';
 import { UserProfileComponent } from './user-profile/user-profile.component'
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MovieInfoComponent } from './movie-info/movie-info.component';
     WelcomePageComponent,
     UserProfileComponent,
     UserLoginFormComponent,
-    MovieInfoComponent
+    MovieInfoComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
