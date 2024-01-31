@@ -21,7 +21,7 @@ import { formatDate } from '@angular/common';
 
 export class UserProfileComponent implements OnInit {
 
-  user: any = {};
+  user: any = localStorage.getItem("user")
   favoriteMovies: any[] = [];
 
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
@@ -34,6 +34,7 @@ export class UserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(this.user)
     this.getUser();
   }
   /**
@@ -45,11 +46,13 @@ export class UserProfileComponent implements OnInit {
    * @example getUser()
    */
   getUser(): void {
-    this.user = this.fetchApiData.getOneUser(this.user.Username);
+
+    console.log(this.user)
+    //this.user = this.fetchApiData.getOneUser(this.user.Username);
     this.userData.Username = this.user.Username;
     this.userData.Email = this.user.Email;
     // this.user.Birthday comes in as ISOString format, like so: "2011-10-05T14:48:00.000Z"
-    this.userData.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
+    //this.userData.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
 
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.favoriteMovies = resp.filter((m: { _id: any; }) => this.user.FavoriteMovies.indexOf(m._id) >= 0);

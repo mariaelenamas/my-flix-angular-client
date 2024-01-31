@@ -1,21 +1,22 @@
+<app-top-bar></app-top-bar>
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
     <ng-container *ngFor="let movie of movies; let i = index;">
         <div *ngIf="i < 12" style="flex: 0 0 33.33%; margin: 0 0.5rem 1rem;">
             <mat-card *ngIf="i < 12;">
                 <mat-card-header>
                     <mat-card-title>{{movie.Title}}</mat-card-title>
-                    <mat-card-subtitle>Directed by: {{movie.Director?.Name}}</mat-card-subtitle>
+                    <mat-card-subtitle>Directed by: {{movie.Directors?.Name}}</mat-card-subtitle>
                 </mat-card-header>
                 <div style="position: relative; width: 100%; padding-top: 100%;">
                     <img src={{movie.Image}} alt={{movie.Title}}
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" />
                 </div>
                 <mat-card-actions>
-                    <button mat-icon-button (click)="openGenre(movie.Genre.Name, movie.Genre.Description)"
+                    <button mat-icon-button (click)="openGenre(movie.Genre[0].Name, movie.Genre[0].Description)"
                         color="primary" matTooltip="Genre">
                         <mat-icon>info</mat-icon>
                     </button>
-                    <button mat-icon-button (click)="openDirector(movie.Director.Name, movie.Director.Bio)"
+                    <button mat-icon-button (click)="openDirector(movie.Directors.Name, movie.Directors.Bio)"
                         color="primary" matTooltip="Director">
                         <mat-icon>person</mat-icon>
                     </button>

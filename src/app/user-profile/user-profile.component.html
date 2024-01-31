@@ -1,16 +1,16 @@
-<!-- <app-top-bar></app-top-bar> -->
+<app-top-bar></app-top-bar>
 <div style="padding:1rem">
     <h1>Profile</h1>
-    <p>Username: {{user.Username}}</p>
-    <p>Email: {{user.Email}}</p>
+    <p>Username: {{user?.Username}}</p>
+    <p>Email: {{user?.Email}}</p>
 
     <h2>Favorite Movies</h2>
     <mat-list>
         <mat-list-item *ngFor="let movie of favoriteMovies">
             <!-- <mat-icon matListItemIcon>folder</mat-icon> -->
-            <img matListItemAvatar src="{{movie.ImagePath}}" />
+            <img matListItemAvatar src="{{movie.Image}}" />
             <div matListItemTitle>{{movie.Title}}</div>
-            <div matListItemLine>{{movie.Director.Name}}</div>
+            <div matListItemLine>{{movie.Directors.Name}}</div>
         </mat-list-item>
     </mat-list>
 
